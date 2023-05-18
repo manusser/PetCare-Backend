@@ -1,7 +1,5 @@
-import express, { Request, Response, NextFunction } from "express";
-import mongoose from "mongoose";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+import express from "express";
+import mongoose from "mongoose"
 import userRoutes from "./routes/userRoutes";
 import dotenv from "dotenv";
 import cors from "cors";
