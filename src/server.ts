@@ -15,7 +15,7 @@ const port = 3000;
 // Conexión a la base de datos MongoDB
 mongoose
 	.connect(
-		"mongodb+srv://manuelserna4252:PetCare123123@cluster0.is8j17j.mongodb.net/?retryWrites=true&w=majority"
+		"mongodb+srv://vercel-admin-user:PC9YMaNHrTelZ4rx@cluster0.is8j17j.mongodb.net/?retryWrites=true&w=majority"
 	)
 	.then(() => {
 		console.log("Conexión exitosa a MongoDB");
