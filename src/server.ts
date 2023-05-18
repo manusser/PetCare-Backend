@@ -1,5 +1,5 @@
 import express from "express";
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 import userRoutes from "./routes/userRoutes";
 import dotenv from "dotenv";
 import cors from "cors";
@@ -26,6 +26,9 @@ mongoose
 
 // Rutas
 app.use("/api/users", userRoutes);
+app.use("/", (req, res) => {
+	res.send("Bienvenido a PetCare");
+});
 
 // Iniciar el servidor
 app.listen(port, () => {
