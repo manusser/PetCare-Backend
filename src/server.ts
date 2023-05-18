@@ -33,3 +33,5 @@ app.use("/api/users", userRoutes);
 app.listen(port, () => {
 	console.log(`Servidor en funcionamiento en http://localhost:${port}`);
 });
+
+module.exports = app;
