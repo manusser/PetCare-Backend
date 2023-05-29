@@ -1,16 +1,10 @@
 import mongoose, { Schema, Document } from "mongoose";
-
+import { IService } from "./Service";
 export interface IUser extends Document {
 	name: string;
 	password: string;
 	email: string;
-    avatar: string;
-}
-
-export interface IServices extends Document {
-	name: string;
-	caracteristics: string;
-	price: number;
+	avatar: string;
 }
 
 const userSchema: Schema = new Schema(
@@ -28,9 +22,9 @@ const userSchema: Schema = new Schema(
 			required: true,
 		},
 		services: {
-			type: Array<IServices>,
+			type: Array<IService>,
 			required: false,
-		}
+		},
 	},
 	{
 		timestamps: true,

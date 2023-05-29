@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import userRoutes from "./routes/userRoutes";
+import serviceRoutes from "./routes/serviceRoutes";
 import dotenv from "dotenv";
 import cors from "cors";
 
@@ -26,6 +27,8 @@ mongoose
 
 // Rutas
 app.use("/api/users", userRoutes);
+app.use("/api/services", serviceRoutes);
+
 app.use("/", (req, res) => {
 	res.send("Bienvenido a PetCare");
 });
