@@ -15,6 +15,21 @@ interface iError {
 	message: string;
 }
 
+router.get("/:id", async (req: Request, res: Response) => {
+	try {
+		const user = await User.findById(req.params.id);
+
+		if (!user) {
+			return res.status(404).json({ error: "Usuario no encontrado" });
+		}
+
+		return res.json(user);
+	} catch (error) {
+		console.error("Error al obtener el usuario", error);
+		return res.status(500).json({ error: "Error interno del servidor" });
+	}
+});
+
 // Ruta para registrar un nuevo usuario
 router.post("/register", async (req: Request, res: Response) => {
 	try {
@@ -114,7 +129,7 @@ router.post("/login", async (req: Request, res: Response) => {
 		// Generar un token JWT
 		if (secretKey) {
 			const token: string = jwt.sign(
-				{ email: user.email, name: user.name },
+				{id: user.id, email: user.email, name: user.name },
 				secretKey,
 				{
 					expiresIn: "7d",

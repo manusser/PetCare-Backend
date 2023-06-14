@@ -17,6 +17,14 @@ const userSchema: Schema = new Schema(
 			type: String,
 			required: true,
 		},
+        telefono: {
+            type: Number,
+            required: false
+        },
+        direccion: {
+            type: String,
+            required: false
+        },
 		password: {
 			type: String,
 			required: true,
@@ -25,6 +33,10 @@ const userSchema: Schema = new Schema(
 			type: Array<IService>,
 			required: false,
 		},
+        mascotas: {
+            type: Array,
+            required: false
+        }
 	},
 	{
 		timestamps: true,
